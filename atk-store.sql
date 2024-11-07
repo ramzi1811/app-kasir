@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Okt 2024 pada 10.27
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Generation Time: Nov 07, 2024 at 03:28 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_kasirapp`
+-- Database: `atk-store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_penjualan`
+-- Table structure for table `detail_penjualan`
 --
 
 CREATE TABLE `detail_penjualan` (
@@ -37,7 +37,7 @@ CREATE TABLE `detail_penjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `detail_penjualan`
+-- Dumping data for table `detail_penjualan`
 --
 
 INSERT INTO `detail_penjualan` (`detail_id`, `kode_produk`, `nama_produk`, `harga`, `jumlah`, `penjualan_id`) VALUES
@@ -45,12 +45,19 @@ INSERT INTO `detail_penjualan` (`detail_id`, `kode_produk`, `nama_produk`, `harg
 (81, 'B.002', 'Pensil 2B', 11000, 1, 46),
 (82, 'A.001', 'Buku Tulis Sidu 38 Lembar', 31500, 1, 47),
 (83, 'A.003', 'Buku Gambar Sidu A4', 8000, 1, 48),
-(84, 'B.001', 'Pulpen Standar ', 18000, 4, 49);
+(84, 'B.001', 'Pulpen Standar ', 18000, 4, 49),
+(85, 'A.001', 'Buku Tulis Sidu 38 Lembar', 31500, 1, 50),
+(86, 'A.002', 'Buku Tulis Sidu 64 Lembar', 48000, 1, 51),
+(87, 'A.001', 'Buku Tulis Sidu 38 Lembar', 31500, 1, 52),
+(88, 'A.001', 'Buku Tulis Sidu 38 Lembar', 31500, 1, 53),
+(89, 'A.004', 'Buku Gambar Sidu A3', 21000, 1, 55),
+(90, 'A.001', 'Buku Tulis Sidu 38 Lembar', 31500, 1, 56),
+(91, 'A.003', 'Buku Gambar Sidu A4', 8000, 1, 57);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelanggan`
+-- Table structure for table `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -62,7 +69,7 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `pelanggan`
+-- Dumping data for table `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `kode_pelanggan`, `nama_pelanggan`, `alamat`, `no_hp`) VALUES
@@ -80,7 +87,7 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `kode_pelanggan`, `nama_pelanggan`, `al
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penjualan`
+-- Table structure for table `penjualan`
 --
 
 CREATE TABLE `penjualan` (
@@ -94,7 +101,7 @@ CREATE TABLE `penjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `penjualan`
+-- Dumping data for table `penjualan`
 --
 
 INSERT INTO `penjualan` (`penjualan_id`, `tanggal`, `total_harga`, `bayar`, `id_pelanggan`, `id_petugas`, `nama_petugas`) VALUES
@@ -141,12 +148,20 @@ INSERT INTO `penjualan` (`penjualan_id`, `tanggal`, `total_harga`, `bayar`, `id_
 (46, '2024-10-18 08:25:39', 11000, 1000000, 1, 1, 'Admin'),
 (47, '2024-10-18 08:56:37', 31500, 1000000, 1, 1, 'Admin'),
 (48, '2024-10-18 10:37:07', 8000, 500000, NULL, 1, 'Admin'),
-(49, '2024-10-18 10:37:37', 72000, 1000000, NULL, 1, 'Admin');
+(49, '2024-10-18 10:37:37', 72000, 1000000, NULL, 1, 'Admin'),
+(50, '2024-10-29 07:05:58', 31500, 1000000, NULL, 1, 'Admin'),
+(51, '2024-10-29 07:06:22', 48000, 1000000, NULL, 1, 'Admin'),
+(52, '2024-10-29 07:16:17', 31500, 1000000, 1, 1, 'Admin'),
+(53, '2024-10-31 08:19:01', 31500, 32000, NULL, 1, 'Admin'),
+(54, '2024-10-31 08:41:10', NULL, NULL, NULL, 0, NULL),
+(55, '2024-10-31 08:41:34', 21000, 21000, NULL, 16, 'kawasaki saki'),
+(56, '2024-11-06 07:58:20', NULL, NULL, NULL, 0, NULL),
+(57, '2024-11-07 07:49:00', 8000, 10000, NULL, 1, 'Admin');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `petugas`
+-- Table structure for table `petugas`
 --
 
 CREATE TABLE `petugas` (
@@ -158,7 +173,7 @@ CREATE TABLE `petugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `petugas`
+-- Dumping data for table `petugas`
 --
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`) VALUES
@@ -171,12 +186,15 @@ INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `le
 (13, 'kasir5', '$2y$10$Ko/sLqo9ke6BqLtSKj7qouYD0dEYPshSFRHk6iKc3nhSPLs036mW2', 'agung', 'petugas'),
 (14, 'kasir6', '$2y$10$.uC1n7/QW57hiTuOkQLs3e5nohwADfNQqOZkzxEvOoRAX1aGM55qW', 'wanda', 'petugas'),
 (15, 'admin3', '$2y$10$3ZUXAWDk9c.1s83iEIFRAOXFrcbusFXBvy7qpnSoLwmSw5kJLUxyO', 'Ripaldi', 'admin'),
-(16, 'kasir7', '$2y$10$SW6MhAvfe3X1WHT9VNlYYef004V/QuGcLOGDM6V90e9y/8iuKBTzq', 'kawasaki saki', 'petugas');
+(16, 'kasir7', '$2y$10$3jc/7ASHbrMIyZ5puzfeEOkACnUEszUD4eju3/T6UGeYdMtQCbnfW', 'kawasaki saki', 'petugas'),
+(17, 'ramzi', '$2y$10$Md5B0Wzu4DC.or2PCZ/HJeefMldbY9EQ/GNNF3LIpWheXqVNKMBIC', 'ramzi', 'petugas'),
+(18, 'admin', '$2y$10$XZJV6j0/DQPUjdaTvPcfROeJZqjY2otbAspy69y/JJRFdO2loZXGa', 'admin3', 'admin'),
+(19, 'wawi', '$2y$10$LmXM4ZOxOK/5cCWo3MA1ruUuBRQo01Zpqd6ZTYeJcVveZoUyHjAcK', 'wawi', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -188,7 +206,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `kode_produk`, `nama_produk`, `harga`, `stok`) VALUES
@@ -211,12 +229,13 @@ INSERT INTO `produk` (`id_produk`, `kode_produk`, `nama_produk`, `harga`, `stok`
 (20, 'D.003', 'Stabillo Joyko Highlighter - Hijau', 10000, 7),
 (24, 'E.001', 'OYKO Penghapus 526-B40P Warna Putih / Eraser Kecil', 14500, 5),
 (25, 'E.002', 'Tip Ex Cair Kenko KE 01 Tipex Correction Pen - 1 B', 66250, 7),
-(26, 'E.003', 'Penghapus Joyko Eb 30 Panjang - Putih, 1 Pack', 35800, 29);
+(26, 'E.003', 'Penghapus Joyko Eb 30 Panjang - Putih, 1 Pack', 35800, 29),
+(27, 'M.001', 'Penggaris', 3000, 20);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tambah_stok`
+-- Table structure for table `tambah_stok`
 --
 
 CREATE TABLE `tambah_stok` (
@@ -227,7 +246,7 @@ CREATE TABLE `tambah_stok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tambah_stok`
+-- Dumping data for table `tambah_stok`
 --
 
 INSERT INTO `tambah_stok` (`tambah_id`, `tanggal`, `kode_produk`, `jumlah`) VALUES
@@ -249,87 +268,89 @@ INSERT INTO `tambah_stok` (`tambah_id`, `tanggal`, `kode_produk`, `jumlah`) VALU
 (16, '0000-00-00 00:00:00', '', 7),
 (17, '0000-00-00 00:00:00', 'E.001', 70),
 (18, '0000-00-00 00:00:00', 'E.001', 50),
-(19, '0000-00-00 00:00:00', 'C.004', 7);
+(19, '0000-00-00 00:00:00', 'C.004', 7),
+(20, '0000-00-00 00:00:00', 'M.001', 5),
+(21, '0000-00-00 00:00:00', 'M.001', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `detail_penjualan`
+-- Indexes for table `detail_penjualan`
 --
 ALTER TABLE `detail_penjualan`
   ADD PRIMARY KEY (`detail_id`);
 
 --
--- Indeks untuk tabel `pelanggan`
+-- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
 
 --
--- Indeks untuk tabel `penjualan`
+-- Indexes for table `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD PRIMARY KEY (`penjualan_id`);
 
 --
--- Indeks untuk tabel `petugas`
+-- Indexes for table `petugas`
 --
 ALTER TABLE `petugas`
   ADD PRIMARY KEY (`id_petugas`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indeks untuk tabel `tambah_stok`
+-- Indexes for table `tambah_stok`
 --
 ALTER TABLE `tambah_stok`
   ADD PRIMARY KEY (`tambah_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `detail_penjualan`
+-- AUTO_INCREMENT for table `detail_penjualan`
 --
 ALTER TABLE `detail_penjualan`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
--- AUTO_INCREMENT untuk tabel `pelanggan`
+-- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `penjualan`
+-- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
--- AUTO_INCREMENT untuk tabel `petugas`
+-- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT untuk tabel `tambah_stok`
+-- AUTO_INCREMENT for table `tambah_stok`
 --
 ALTER TABLE `tambah_stok`
-  MODIFY `tambah_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `tambah_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

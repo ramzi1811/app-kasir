@@ -47,23 +47,22 @@ if (!isset($_SESSION['penid'])) {
 							<?php
 						} else {
 							?>
-							<form class="d-flex" method="POST" action="pelanggan_simpan.php">
-								<input list="id_pelanggan" id="ip" name="ip" autocomplete="off" required
-									placeholder="Pelanggan" class="form-control me-2" />
-								<datalist id="id_pelanggan">
-									<?php
-									include "../config.php";
-									$sqlpl = "select * from pelanggan";
-									$respl = mysqli_query($koneksi, $sqlpl);
-									while ($dtl = mysqli_fetch_array($respl)) {
-										?>
-										<option value="<?= $dtl['id_pelanggan'] ?>"><?= $dtl['kode_pelanggan'] ?> |
-											<?= $dtl['nama_pelanggan'] ?> Hp. <?= $dtl['no_hp'] ?>
-										</option>
-										<?php
-									}
+							<form class="d-flex gap-2" method="POST" action="pelanggan_simpan.php">
+								<select id="ip" name="ip" autocomplete="off" required class="form-select" />
+								<option value="" selected disabled>Pelanggan</option>
+								<?php
+								include "../config.php";
+								$sqlpl = "select * from pelanggan";
+								$respl = mysqli_query($koneksi, $sqlpl);
+								while ($dtl = mysqli_fetch_array($respl)) {
 									?>
-								</datalist>
+									<option value="<?= $dtl['id_pelanggan'] ?>">
+										<?= $dtl['nama_pelanggan'] ?>
+									</option>
+									<?php
+								}
+								?>
+								</select>
 								<button class="btn btn-primary" type="submit" name="save">
 									<i class="fas fa-save"></i>
 								</button>
@@ -83,7 +82,7 @@ if (!isset($_SESSION['penid'])) {
 
 					<div class="row">
 						<div class="col-sm-8">
-							<form class="d-flex" method="POST" action="simpan.php">
+							<form class="d-flex gap-2" method="POST" action="simpan.php">
 								<?php
 								if (isset($_GET['kp'])) {
 									$kp = $_GET['kp'];
@@ -92,22 +91,20 @@ if (!isset($_SESSION['penid'])) {
 									<?php
 								} else {
 									?>
-									<input list="kode_produk" id="kp" name="kp" autocomplete="off" required
-										placeholder="Kode Produk" class="form-control me-2" />
-									<datalist id="kode_produk">
-										<?php
-										include "../config.php";
-										$sqlp = "select * from produk";
-										$resp = mysqli_query($koneksi, $sqlp);
-										while ($dt = mysqli_fetch_array($resp)) {
-											?>
-											<option value="<?= $dt['kode_produk'] ?>"><?= $dt['nama_produk'] ?> |
-												<?= $dt['harga'] ?>
-											</option>
-											<?php
-										}
+									<select id="kp" name="kp" required class="form-select" />
+									<option value="" selected disabled>Produk</option>
+									<?php
+									include "../config.php";
+									$sqlp = "select * from produk";
+									$resp = mysqli_query($koneksi, $sqlp);
+									while ($dt = mysqli_fetch_array($resp)) {
 										?>
-									</datalist>
+										<option value="<?= $dt['kode_produk'] ?>"><?= $dt['nama_produk'] ?>
+										</option>
+										<?php
+									}
+									?>
+									</select>
 
 
 									<?php
@@ -367,11 +364,11 @@ if (!isset($_SESSION['penid'])) {
 						</div>
 					</div>
 
+					<div class="container p-2 rounded text-center">
+						<iframe name="cetak-nota" src="" width="100%" height="200px" style="border: none;"></iframe>
+					</div>
 				</div>
 
-				<div class="container p-2 rounded text-center">
-					<iframe name="cetak-nota" src="" width="100%" height="200px" style="border: none;"></iframe>
-				</div>
 
 
 				<?php
@@ -380,7 +377,7 @@ if (!isset($_SESSION['penid'])) {
 				<div class="container border p-2 bg-light text-dark rounded text-center my-1">
 					<form class="d-flex" method="POST" action="bayar.php">
 						<input type="hidden" name="jmltotal" value="<?= $jmltot ?>">
-						<input class="form-control me-2" type="number" placeholder="Bayar" name="bayar">
+						<input class="form-control me-2" type="text" placeholder="Bayar" name="bayar" id="tanpa-rupiah">
 						<button class="btn btn-primary" type="submit" name="save">
 							<i class="fas fa-calculator"></i>
 						</button>
@@ -392,6 +389,7 @@ if (!isset($_SESSION['penid'])) {
 	</main>
 	<!-- <?php include "../footer.php" ?> -->
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="../rupiah.js"></script>
 </body>
 
 </html>

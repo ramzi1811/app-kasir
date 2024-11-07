@@ -1,6 +1,14 @@
-@page { margin: 0 }
-body { margin: 0; font-size:10px;font-family: monospace;}
-td { font-size:10px; }
+@page {
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-size: 10px;
+  font-family: monospace;
+}
+td {
+  font-size: 10px;
+}
 .sheet {
   margin: 0;
   overflow: hidden;
@@ -10,29 +18,55 @@ td { font-size:10px; }
 }
 
 /** Paper sizes **/
-body.struk .sheet { width: 58mm; }
-body.struk .sheet { padding: 2mm; }
+body.struk .sheet {
+  width: 56mm;
+}
+body.struk .sheet {
+  padding: 2mm;
+}
 
-.txt-left { text-align: left;}
-.txt-center { text-align: center;}
-.txt-right { text-align: right;}
+.txt-left {
+  text-align: left;
+}
+.txt-center {
+  text-align: center;
+}
+.txt-right {
+  text-align: right;
+}
 
 /** For screen preview **/
 @media screen {
-  body { background: #e0e0e0;font-family: monospace; }
+  body {
+    background: #e0e0e0;
+    font-family: monospace;
+  }
   .sheet {
     background: white;
-    box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
+    box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
     margin: 5mm;
   }
 }
 
 /** Fix for Chrome issue #273306 **/
 @media print {
-    body { font-family: monospace; }
-    body.struk                 { width: 58mm; text-align: left;}
-    body.struk .sheet          { padding: 2mm; }
-    .txt-left { text-align: left;}
-    .txt-center { text-align: center;}
-    .txt-right { text-align: right;}
+  body {
+    font-family: monospace;
+  }
+  body.struk {
+    width: 56mm;
+    text-align: left;
+  }
+  body.struk .sheet {
+    padding: 2mm;
+  }
+  .txt-left {
+    text-align: left;
+  }
+  .txt-center {
+    text-align: center;
+  }
+  .txt-right {
+    text-align: right;
+  }
 }

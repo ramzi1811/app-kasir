@@ -8,16 +8,19 @@
         <!-- Kolom untuk Ikon Sosial Media -->
         <div class="col-7 text-end d-flex justify-content-end">
             <!-- Ikon Sosial Media -->
-            <a href="https://www.facebook.com/" class="text-light mx-2" target="_blank" style="text-decoration:none;">
+            <a href="https://www.facebook.com/share/uTsrHyHY61ZPTB5t/" class="text-light mx-2" target="_blank"
+                style="text-decoration:none;">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/" class="text-light mx-2" target="_blank" style="text-decoration:none;">
+            <a href="https://www.instagram.com/ramzimusthofa1/profilecard/?igsh=ejZ3anhwOWk1NnRl"
+                class="text-light mx-2" target="_blank" style="text-decoration:none;">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/" class="text-light mx-2" target="_blank" style="text-decoration:none;">
+            <a href="https://wa.me/628818213731" class="text-light mx-2" target="_blank" style="text-decoration:none;">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://www.twitter.com/" class="text-light mx-2" target="_blank" style="text-decoration:none;">
+            <a href="https://x.com/TanyavonDe10341?t=N-z8uB47rE7rzHUVG9m_yw&s=08" class="text-light mx-2"
+                target="_blank" style="text-decoration:none;">
                 <i class="fa-brands fa-x-twitter"></i>
             </a>
         </div>

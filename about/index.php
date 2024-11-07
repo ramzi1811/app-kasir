@@ -107,7 +107,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
                                 Ramzi Musthofa
                             </div>
                             <div class="card-body">
-                                <img src="../Foto/ramzi.jpg" alt="Ramzi">
+                                <img src="../foto/ramzi.jpg" alt="Ramzi">
                                 <p>12 RPL 3</p>
                                 <p>SMKN 1 KADIPATEN</p>
                             </div>
@@ -120,7 +120,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
                                 Muhamad Ripaldi
                             </div>
                             <div class="card-body">
-                                <img src="../Foto/ripala.jpg" alt="Ripaldi">
+                                <img src="../foto/ripal.jpg" alt="Ripaldi">
                                 <p> 12 RPL 3</p>
                                 <p>SMKN 1 KADIPATEN</p>
                             </div>
@@ -133,7 +133,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
                                 Agung Setiadi
                             </div>
                             <div class="card-body">
-                                <img src="../Foto/agung.jpg" alt="Agung">
+                                <img src="../foto/agungs.jpg" alt="agungs">
                                 <p> 12 RPL 3</p>
                                 <p>SMKN 1 KADIPATEN</p>
                             </div>
@@ -146,7 +146,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
                                 Rizma Fauziah
                             </div>
                             <div class="card-body">
-                                <img src="../Foto/rizma.jpg" alt="Rizma">
+                                <img src="../foto/rizma.jpg" alt="Rizma">
                                 <p>12 RPL 3</p>
                                 <p>SMKN 1 KADIPATEN</p>
                             </div>
@@ -159,7 +159,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
                                 Wanda Aprilia Hidayat
                             </div>
                             <div class="card-body">
-                                <img src="../Foto/wanda.jpg" alt="Wanda">
+                                <img src="../foto/wanda.jpg" alt="Wanda">
                                 <p> 12 RPL 3</p>
                                 <p>SMKN 1 KADIPATEN</p>
                             </div>
